@@ -3,3 +3,7 @@ djangorestframework==3.12.4
 djoser==2.1.0
 webcolors==1.11.1
 Pillow==9.0.0
+
+
+Проблема в том, что Pillow 9.0.0 не поддерживает Python 3.12 на Windows и не имеет готовых бинарных файлов, а для сборки из исходников не хватает библиотеки zlib.
+Ошибка ModuleNotFoundError: No module named 'distutils' возникает, потому что модуль distutils был удалён из стандартной библиотеки Python начиная с версии 3.12, а Django 3.2.3 (ваша версия) всё ещё зависит от него.

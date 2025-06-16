@@ -7,12 +7,16 @@ from .serializers import AchievementSerializer, CatSerializer
 
 
 class CatViewSet(viewsets.ModelViewSet):
+    """
+    Returns a list of all cats from the database.
+    """
+
     queryset = Cat.objects.all()
     serializer_class = CatSerializer
-    pagination_class = PageNumberPagination 
+    pagination_class = PageNumberPagination
 
     def perform_create(self, serializer):
-        serializer.save(owner=self.request.user) 
+        serializer.save(owner=self.request.user)
 
 
 class AchievementViewSet(viewsets.ModelViewSet):

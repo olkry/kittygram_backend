@@ -22,3 +22,13 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+'''
+{
+    "username": "User1",
+    "password": "!TestUser1"
+
+    "auth_token": "90518850b0e4087ce012e346e88bf81faf8ef02f"
+}
+'''
